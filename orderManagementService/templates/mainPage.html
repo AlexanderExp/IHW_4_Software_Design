@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Orders</title>
+    <link rel="stylesheet" href="../static/css/mainPageStyle.css">
+</head>
+<body>
+<h1>Restaurant Orders</h1>
+
+<div class="order-creation">
+    <h2>Create New Order</h2>
+    <!-- Order creation form -->
+    <form>
+        <!-- User ID -->
+        <label for="user-id">User ID:</label>
+        <input type="text" id="user-id" name="user-id" required>
+
+        <!-- List of dishes with quantities -->
+        <label for="dishes">Dishes:</label>
+        <select id="dishes" name="dishes" multiple required>
+            <!-- List of dishes options -->
+        </select>
+
+        <!-- Special requests -->
+        <label for="special-requests">Special Requests:</label>
+        <textarea id="special-requests" name="special-requests"></textarea>
+
+        <!-- Order status -->
+        <label for="order-status">Order Status:</label>
+        <select id="order-status" name="order-status" required>
+            <option value="pending">Pending</option>
+            <option value="in-progress">In Progress</option>
+            <option value="completed">Completed</option>
+            <option value="canceled">Canceled</option>
+        </select>
+
+        <!-- Submit button -->
+        <input type="submit" value="Create Order">
+    </form>
+</div>
+
+<div class="order-processing">
+    <h2>Order Processing</h2>
+    <!-- Order processing details -->
+    <div class="order-details">
+        <!-- Order ID -->
+        <div class="order-id">Order ID: 123456789</div>
+        <!-- Order status -->
+        <div class="order-status">Status: In Progress</div>
+        <!-- Order details -->
+        <div class="order-info">
+            <!-- User ID -->
+            <div class="user-id">User ID: 987654321</div>
+            <!-- List of dishes -->
+            <div class="dishes">
+                <ul>
+                    <!-- List of dishes -->
+                    <li>Dish 1 - Quantity: 2</li>
+                    <li>Dish 2 - Quantity: 1</li>
+                </ul>
+            </div>
+            <!-- Special requests -->
+            <div class="special-requests">Special Requests: None</div>
+        </div>
+    </div>
+</div>
+
+<div class="dish-management">
+    <h2>Dish Management</h2>
+    <!-- Dish management options -->
+    <div class="options">
+        <button class="add-dish">Add Dish</button>
+        <button class="edit-dish">Edit Dish</button>
+        <button class="delete-dish">Delete Dish</button>
+    </div>
+    <!-- Dish list -->
+    <div class="dish-list">
+        <ul>
+            <!-- List of dishes -->
+            <li>Dish 1 - Available: Yes</li>
+            <li>Dish 2 - Available: No</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu">
+    <h2>Menu</h2>
+    <!-- Menu items -->
+    <ul class="menu-items">
+        <!-- List of menu items -->
+        <li>Dish 1 - Available: Yes</li>
+        <li>Dish 2 - Available: No</li>
+    </ul>
+</div>
+
+</body>
+</html>

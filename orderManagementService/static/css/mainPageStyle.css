@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+.order-creation, .order-processing, .dish-management, .menu {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.order-creation label, .order-processing label, .dish-management label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.order-creation input[type="submit"] {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.order-processing .order-details {
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.dish-management .options button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.dish-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu .menu-items {
+    list-style-type: none;
+    padding: 0;
+}
