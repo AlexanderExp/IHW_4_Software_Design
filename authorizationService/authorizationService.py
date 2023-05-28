@@ -2,13 +2,13 @@ from datetime import datetime
 from uuid import uuid4
 
 from flask import Flask, render_template, redirect, url_for, request, flash, session
-from flask_login import LoginManager, login_user, login_required, logout_user
+from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 from flask_socketio import SocketIO
 
 from dbModels import db, User
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:liubov1969@localhost:60042/postgres'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'URI'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = "secret_key"
 
@@ -46,6 +46,11 @@ def register():
         return render_template('successPage.html')
 
     return render_template('registerPage.html')
+
+
+@app.route('/get_info_about_user')
+def get_info_about_user():
+    return current_user
 
 
 @app.route('/login', methods=['GET', 'POST'])

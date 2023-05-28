@@ -4,7 +4,7 @@ from flask_login import LoginManager, current_user, login_user, logout_user, log
 from dbModels import db, Dish, Order, OrderDish, User
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:liubov1969@localhost:60042/postgres'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'URI'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = "secret_key"
 
@@ -14,34 +14,6 @@ db.init_app(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 
-# Пример данных для хранения заказов
-ordersX = [
-    {
-        'id': 1,
-        'user_id': 1,
-        'dishes': [{'dish_id': 1, 'quantity': 2}, {'dish_id': 2, 'quantity': 1}],
-        'special_requests': 'Без лука',
-        'status': 'в ожидании'
-    },
-    {
-        'id': 2,
-        'user_id': 2,
-        'dishes': [{'dish_id': 3, 'quantity': 1}],
-        'special_requests': '',
-        'status': 'в ожидании'
-    }
-]
-
-# Пример данных для хранения блюд
-dishesX = [
-    {'id': 1, 'name': 'Пицца', 'price': 10, 'quantity': 5},
-    {'id': 2, 'name': 'Паста', 'price': 10, 'quantity': 3},
-    {'id': 3, 'name': 'Салат', 'price': 10, 'quantity': 0},
-    {'id': 1, 'name': 'Пицца', 'price': 10, 'quantity': 5},
-    {'id': 2, 'name': 'Паста', 'price': 10, 'quantity': 3},
-    {'id': 3, 'name': 'Салат', 'price': 10, 'quantity': 0}
-]
-
 
 @app.route('/order_management', methods=['GET', 'POST'])
 def order_management():
@@ -49,7 +21,6 @@ def order_management():
         user_id = request.get_json()['user_id']
         print("fine")
         return redirect('http://localhost:5800')
-        # return redirect(url_for(''))
     else:
         return render_template('mainPage.html')
 
@@ -168,7 +139,7 @@ def change_dish_quantity():
 
 
 @app.route('/change_dish_price', methods=['POST', 'GET'])
-def change_dish_quantity():
+def change_dish_price():
     if request.method == 'POST':
         data = request.get_json()
         dish_id = data['dish_id']
@@ -180,7 +151,7 @@ def change_dish_quantity():
 
 
 @app.route('/change_dish_name', methods=['POST', 'GET'])
-def change_dish_quantity():
+def change_dish_name():
     if request.method == 'POST':
         data = request.get_json()
         dish_id = data['dish_id']
